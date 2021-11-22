@@ -82,7 +82,7 @@ namespace lsp
                 explicit oscillator(const meta::plugin_t *metadata);
                 virtual ~oscillator();
 
-                virtual void        init(plug::IWrapper *wrapper);
+                virtual void        init(plug::IWrapper *wrapper, plug::IPort **ports);
                 virtual void        destroy();
 
             public:

@@ -179,9 +179,9 @@ namespace lsp
             return dspu::OM_NONE;
         }
 
-        void oscillator::init(plug::IWrapper *wrapper)
+        void oscillator::init(plug::IWrapper *wrapper, plug::IPort **ports)
         {
-            plug::Module::init(wrapper);
+            plug::Module::init(wrapper, ports);
 
             size_t samples  = TMP_BUF_SIZE + meta::oscillator_metadata::HISTORY_MESH_SIZE * 2;
             pData           = new uint8_t[samples * sizeof(float) + DEFAULT_ALIGN];
@@ -200,28 +200,28 @@ namespace lsp
             for (size_t n = 0; n < meta::oscillator_metadata::HISTORY_MESH_SIZE; ++n)
                 vTime[n] = float(2 * n) / meta::oscillator_metadata::HISTORY_MESH_SIZE;
 
-            size_t port_id = 0;
-            pIn                     = vPorts[port_id++];
-            pOut                    = vPorts[port_id++];
-            pBypass                 = vPorts[port_id++];
-            pFrequency              = vPorts[port_id++];
-            pGain                   = vPorts[port_id++];
-            pDCOffset               = vPorts[port_id++];
-            pDCRefSc                = vPorts[port_id++];
-            pInitPhase              = vPorts[port_id++];
-            pModeSc                 = vPorts[port_id++];
-            pOversamplerModeSc      = vPorts[port_id++];
-            pFuncSc                 = vPorts[port_id++];
-            pSquaredSinusoidInv     = vPorts[port_id++];
-            pParabolicInv           = vPorts[port_id++];
-            pRectangularDutyRatio   = vPorts[port_id++];
-            pSawtoothWidth          = vPorts[port_id++];
-            pTrapezoidRaiseRatio    = vPorts[port_id++];
-            pTrapezoidFallRatio     = vPorts[port_id++];
-            pPulsePosWidthRatio     = vPorts[port_id++];
-            pPulseNegWidthRatio     = vPorts[port_id++];
-            pParabolicWidth         = vPorts[port_id++];
-            pOutputMesh             = vPorts[port_id++];
+            size_t port_id          = 0;
+            pIn                     = ports[port_id++];
+            pOut                    = ports[port_id++];
+            pBypass                 = ports[port_id++];
+            pFrequency              = ports[port_id++];
+            pGain                   = ports[port_id++];
+            pDCOffset               = ports[port_id++];
+            pDCRefSc                = ports[port_id++];
+            pInitPhase              = ports[port_id++];
+            pModeSc                 = ports[port_id++];
+            pOversamplerModeSc      = ports[port_id++];
+            pFuncSc                 = ports[port_id++];
+            pSquaredSinusoidInv     = ports[port_id++];
+            pParabolicInv           = ports[port_id++];
+            pRectangularDutyRatio   = ports[port_id++];
+            pSawtoothWidth          = ports[port_id++];
+            pTrapezoidRaiseRatio    = ports[port_id++];
+            pTrapezoidFallRatio     = ports[port_id++];
+            pPulsePosWidthRatio     = ports[port_id++];
+            pPulseNegWidthRatio     = ports[port_id++];
+            pParabolicWidth         = ports[port_id++];
+            pOutputMesh             = ports[port_id++];
 
             sOsc.init();
         }
