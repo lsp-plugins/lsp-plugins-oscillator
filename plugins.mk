@@ -18,13 +18,6 @@
 # along with lsp-plugins-oscillator.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Package version
-ARTIFACT_ID                 = LSP_PLUGINS_OSCILLATOR
-ARTIFACT_NAME               = lsp-plugins-oscillator
-ARTIFACT_TYPE               = plug
-ARTIFACT_DESC               = LSP Oscillator Plugin Series
-ARTIFACT_HEADERS            = lsp-plug.in
-ARTIFACT_VERSION            = 1.0.1-devel
-
-
-
+# Variables that describe dependencies
+PLUGIN_DEPENDENCIES     = LSP_PLUGINS_OSCILLATOR
+PLUGIN_PACKAGE_NAME     = lsp-plugins
