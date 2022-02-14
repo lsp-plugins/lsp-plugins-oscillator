@@ -111,6 +111,15 @@ namespace lsp
             PORTS_END
         };
 
+        const meta::bundle_t oscillator_bundle =
+        {
+            "oscillator",
+            "Oscillator",
+            B_UTILITIES,
+            "D8evQrkY8nQ",
+            "This plugin implements a simple yet flexible utility signal generator.\nIt can be used to provide reference waves in replacement, additive and\nmultiplicative (modulation) mode."
+        };
+
         const meta::plugin_t oscillator_mono =
         {
             "Oszillator Mono",
@@ -129,7 +138,8 @@ namespace lsp
             oscillator_ports,
             "util/oscillator_mono.xml",
             NULL,
-            mono_plugin_port_groups
+            mono_plugin_port_groups,
+            &oscillator_bundle
         };
     } // namespace meta
 } // namespace lsp
