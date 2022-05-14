@@ -1,0 +1,24 @@
+{
+	"oscillator": {
+		"add": "Hinzufügen",
+        "bl_rect": "Band Limited Rectangular",
+        "bl_saw": "Band Limited Sawtooth",
+        "bl_trap": "Band Limited Trapezoid",
+        "bl_pulse": "Band Limited Pulsetrain",
+        "bl_para": "Band Limited Parabolic",
+        "cos": "Cosine",
+        "mul": "Multiply",
+        "pulse": "Pulsetrain",
+        "para": "Parabolic",
+        "rect": "Rectangular",
+        "rep": "Replace",
+        "saw": "Sawtooth",
+        "sin": "Sine",
+        "sqr_sin": "Squared Sine",
+        "sqr_cos": "Squared Cosine",
+        "trap": "Trapezoid",
+        "wave_dc": "Wave DC",
+        "zero_dc": "Zero DC"
+	}
+}
+
