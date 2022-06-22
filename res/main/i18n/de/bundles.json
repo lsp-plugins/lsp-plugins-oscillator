@@ -1,0 +1,7 @@
+{
+	"oscillator": {
+		"name": "Oszillator",
+		"description": "Dieses Plugin bietet einen simplen aber trotzdem flexiblen Signalgeneratoren.\n Es kann genutzt werden, um z.B. Referenzwellenformen zu generieren \nim Austausch-, Zusatz- und Multiplikationsmodus."
+	}
+}
+
