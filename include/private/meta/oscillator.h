@@ -32,22 +32,22 @@ namespace lsp
     {
         struct oscillator_metadata
         {
-            static const float FREQUENCY_MIN        = 20.0f;
-            static const float FREQUENCY_MAX        = 20000.0f;
-            static const float FREQUENCY_DFL        = 440.0f;
-            static const float FREQUENCY_STEP       = 0.001f;
+            static constexpr float FREQUENCY_MIN        = 20.0f;
+            static constexpr float FREQUENCY_MAX        = 20000.0f;
+            static constexpr float FREQUENCY_DFL        = 440.0f;
+            static constexpr float FREQUENCY_STEP       = 0.001f;
 
-            static const float DCOFFSET_MIN         = -1.0f;
-            static const float DCOFFSET_MAX         = 1.0f;
-            static const float DCOFFSET_DFL         = 0.0f;
-            static const float DCOFFSET_STEP        = 0.001f;
+            static constexpr float DCOFFSET_MIN         = -1.0f;
+            static constexpr float DCOFFSET_MAX         = 1.0f;
+            static constexpr float DCOFFSET_DFL         = 0.0f;
+            static constexpr float DCOFFSET_STEP        = 0.001f;
 
-            static const float INITPHASE_MIN        = 0.0f;
-            static const float INITPHASE_MAX        = 360.0f;
-            static const float INITPHASE_DFL        = 0.0f;
-            static const float INITPHASE_STEP       = 0.1f;
+            static constexpr float INITPHASE_MIN        = 0.0f;
+            static constexpr float INITPHASE_MAX        = 360.0f;
+            static constexpr float INITPHASE_DFL        = 0.0f;
+            static constexpr float INITPHASE_STEP       = 0.1f;
 
-            static const size_t HISTORY_MESH_SIZE   = 280;
+            static constexpr size_t HISTORY_MESH_SIZE   = 280;
 
             enum function_selector_t
             {
