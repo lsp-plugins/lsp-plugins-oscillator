@@ -38,7 +38,8 @@ namespace lsp
 {
     namespace meta
     {
-        static const int oscillator_classes[] = { C_OSCILLATOR, -1};
+        static const int plugin_classes[]           = { C_OSCILLATOR, -1 };
+        static const int clap_features[]            = { CF_AUDIO_EFFECT, -1 };
 
         static const port_item_t sc_func[] =
         {
@@ -132,8 +133,10 @@ namespace lsp
             "sntq",
             LSP_LADSPA_OSCILLATOR_BASE + 0,
             LSP_LADSPA_URI("oscillator_mono"),
+            LSP_CLAP_URI("oscillator_mono"),
             LSP_PLUGINS_OSCILLATOR_VERSION,
-            oscillator_classes,
+            plugin_classes,
+            clap_features,
             E_INLINE_DISPLAY | E_DUMP_STATE,
             oscillator_ports,
             "util/oscillator_mono.xml",
@@ -141,5 +144,5 @@ namespace lsp
             mono_plugin_port_groups,
             &oscillator_bundle
         };
-    } // namespace meta
-} // namespace lsp
+    } /* namespace meta */
+} /* namespace lsp */
