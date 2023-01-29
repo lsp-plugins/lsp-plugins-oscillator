@@ -116,7 +116,7 @@ namespace lsp
         {
             "oscillator",
             "Oscillator",
-            B_UTILITIES,
+            B_GENERATORS,
             "D8evQrkY8nQ",
             "This plugin implements a simple yet flexible utility signal generator.\nIt can be used to provide reference waves in replacement, additive and\nmultiplicative (modulation) mode."
         };
