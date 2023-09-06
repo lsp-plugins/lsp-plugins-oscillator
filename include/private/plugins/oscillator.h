@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2021 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2021 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright (C) 2023 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2023 Vladimir Sadovnikov <sadko4u@gmail.com>
  *
  * This file is part of lsp-plugins-oscillator
  * Created on: 3 авг. 2021 г.
@@ -78,23 +78,26 @@ namespace lsp
                 static dspu::dc_reference_t     get_dc_reference(size_t reference);
                 static dspu::over_mode_t        get_oversampling_mode(size_t mode);
 
+            protected:
+                void                do_destroy();
+
             public:
                 explicit oscillator(const meta::plugin_t *metadata);
-                virtual ~oscillator();
+                virtual ~oscillator() override;
 
-                virtual void        init(plug::IWrapper *wrapper, plug::IPort **ports);
-                virtual void        destroy();
+                virtual void        init(plug::IWrapper *wrapper, plug::IPort **ports) override;
+                virtual void        destroy() override;
 
             public:
-                virtual void        process(size_t samples);
-                virtual void        update_settings();
-                virtual void        update_sample_rate(long sr);
+                virtual void        process(size_t samples) override;
+                virtual void        update_settings() override;
+                virtual void        update_sample_rate(long sr) override;
 
-                virtual bool        inline_display(plug::ICanvas *cv, size_t width, size_t height);
-                virtual void        ui_activated();
-                virtual void        dump(dspu::IStateDumper *v) const;
+                virtual bool        inline_display(plug::ICanvas *cv, size_t width, size_t height) override;
+                virtual void        ui_activated() override;
+                virtual void        dump(dspu::IStateDumper *v) const override;
         };
-    } // namespace plugins
-} // namespace lsp
+    } /* namespace plugins */
+} /* namespace lsp */
 
 #endif /* PRIVATE_PLUGINS_OSCILLATOR_H_ */
