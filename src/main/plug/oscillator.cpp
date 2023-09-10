@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2021 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2021 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright (C) 2023 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2023 Vladimir Sadovnikov <sadko4u@gmail.com>
  *
  * This file is part of lsp-plugins-oscillator
  * Created on: 3 авг. 2021 г.
@@ -28,12 +28,17 @@
 
 // Maximum size of temporary buffer in samples
 #define TMP_BUF_SIZE            1024
-#define TRACE_PORT(p)           lsp_trace("  port id=%s", (p)->metadata()->id);
 
 namespace lsp
 {
     namespace plugins
     {
+        static plug::IPort *TRACE_PORT(plug::IPort *p)
+        {
+            lsp_trace("  port id=%s", (p)->metadata()->id);
+            return p;
+        }
+
         //---------------------------------------------------------------------
         // Plugin factory
         static const meta::plugin_t *plugins[] =
@@ -86,9 +91,16 @@ namespace lsp
 
         oscillator::~oscillator()
         {
+            do_destroy();
         }
 
         void oscillator::destroy()
+        {
+            plug::Module::destroy();
+            do_destroy();
+        }
+
+        void oscillator::do_destroy()
         {
             if (pData != NULL)
             {
@@ -202,27 +214,27 @@ namespace lsp
                 vTime[n] = float(2 * n) / meta::oscillator_metadata::HISTORY_MESH_SIZE;
 
             size_t port_id          = 0;
-            pIn                     = ports[port_id++];
-            pOut                    = ports[port_id++];
-            pBypass                 = ports[port_id++];
-            pFrequency              = ports[port_id++];
-            pGain                   = ports[port_id++];
-            pDCOffset               = ports[port_id++];
-            pDCRefSc                = ports[port_id++];
-            pInitPhase              = ports[port_id++];
-            pModeSc                 = ports[port_id++];
-            pOversamplerModeSc      = ports[port_id++];
-            pFuncSc                 = ports[port_id++];
-            pSquaredSinusoidInv     = ports[port_id++];
-            pParabolicInv           = ports[port_id++];
-            pRectangularDutyRatio   = ports[port_id++];
-            pSawtoothWidth          = ports[port_id++];
-            pTrapezoidRaiseRatio    = ports[port_id++];
-            pTrapezoidFallRatio     = ports[port_id++];
-            pPulsePosWidthRatio     = ports[port_id++];
-            pPulseNegWidthRatio     = ports[port_id++];
-            pParabolicWidth         = ports[port_id++];
-            pOutputMesh             = ports[port_id++];
+            pIn                     = TRACE_PORT(ports[port_id++]);
+            pOut                    = TRACE_PORT(ports[port_id++]);
+            pBypass                 = TRACE_PORT(ports[port_id++]);
+            pFrequency              = TRACE_PORT(ports[port_id++]);
+            pGain                   = TRACE_PORT(ports[port_id++]);
+            pDCOffset               = TRACE_PORT(ports[port_id++]);
+            pDCRefSc                = TRACE_PORT(ports[port_id++]);
+            pInitPhase              = TRACE_PORT(ports[port_id++]);
+            pModeSc                 = TRACE_PORT(ports[port_id++]);
+            pOversamplerModeSc      = TRACE_PORT(ports[port_id++]);
+            pFuncSc                 = TRACE_PORT(ports[port_id++]);
+            pSquaredSinusoidInv     = TRACE_PORT(ports[port_id++]);
+            pParabolicInv           = TRACE_PORT(ports[port_id++]);
+            pRectangularDutyRatio   = TRACE_PORT(ports[port_id++]);
+            pSawtoothWidth          = TRACE_PORT(ports[port_id++]);
+            pTrapezoidRaiseRatio    = TRACE_PORT(ports[port_id++]);
+            pTrapezoidFallRatio     = TRACE_PORT(ports[port_id++]);
+            pPulsePosWidthRatio     = TRACE_PORT(ports[port_id++]);
+            pPulseNegWidthRatio     = TRACE_PORT(ports[port_id++]);
+            pParabolicWidth         = TRACE_PORT(ports[port_id++]);
+            pOutputMesh             = TRACE_PORT(ports[port_id++]);
 
             sOsc.init();
         }
@@ -451,7 +463,8 @@ namespace lsp
             v->write("pParabolicWidth", pParabolicWidth);
             v->write("pOutputMesh", pOutputMesh);
         }
-    } // namespace plugins
-} // namespace lsp
+
+    } /* namespace plugins */
+} /* namespace lsp */
 
 
