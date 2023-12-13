@@ -125,6 +125,7 @@ namespace lsp
         {
             "Oszillator Mono",
             "Oscillator Mono",
+            "Oscillator Mono",
             "O1M", // Oscillator x1 Mono
             &developers::s_tronci,
             "oscillator_mono",
