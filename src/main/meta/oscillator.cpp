@@ -25,7 +25,7 @@
 
 #define LSP_PLUGINS_OSCILLATOR_VERSION_MAJOR       1
 #define LSP_PLUGINS_OSCILLATOR_VERSION_MINOR       0
-#define LSP_PLUGINS_OSCILLATOR_VERSION_MICRO       15
+#define LSP_PLUGINS_OSCILLATOR_VERSION_MICRO       16
 
 #define LSP_PLUGINS_OSCILLATOR_VERSION  \
     LSP_MODULE_VERSION( \
@@ -124,6 +124,7 @@ namespace lsp
         const meta::plugin_t oscillator_mono =
         {
             "Oszillator Mono",
+            "Oscillator Mono",
             "Oscillator Mono",
             "O1M", // Oscillator x1 Mono
             &developers::s_tronci,
