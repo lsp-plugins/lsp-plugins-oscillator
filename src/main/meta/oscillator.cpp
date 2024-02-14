@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2021 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2021 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright (C) 2024 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2024 Vladimir Sadovnikov <sadko4u@gmail.com>
  *
  * This file is part of lsp-plugins-oscillator
  * Created on: 3 авг. 2021 г.
@@ -132,6 +132,8 @@ namespace lsp
             LSP_LV2_URI("oscillator_mono"),
             LSP_LV2UI_URI("oscillator_mono"),
             "sntq",
+            LSP_VST3_UID("o1m     sntq"),
+            LSP_VST3UI_UID("o1m     sntq"),
             LSP_LADSPA_OSCILLATOR_BASE + 0,
             LSP_LADSPA_URI("oscillator_mono"),
             LSP_CLAP_URI("oscillator_mono"),
