@@ -25,7 +25,7 @@
 
 #define LSP_PLUGINS_OSCILLATOR_VERSION_MAJOR       1
 #define LSP_PLUGINS_OSCILLATOR_VERSION_MINOR       0
-#define LSP_PLUGINS_OSCILLATOR_VERSION_MICRO       19
+#define LSP_PLUGINS_OSCILLATOR_VERSION_MICRO       20
 
 #define LSP_PLUGINS_OSCILLATOR_VERSION  \
     LSP_MODULE_VERSION( \
@@ -129,14 +129,17 @@ namespace lsp
             "O1M", // Oscillator x1 Mono
             &developers::s_tronci,
             "oscillator_mono",
-            LSP_LV2_URI("oscillator_mono"),
-            LSP_LV2UI_URI("oscillator_mono"),
-            "sntq",
-            LSP_VST3_UID("o1m     sntq"),
-            LSP_VST3UI_UID("o1m     sntq"),
-            LSP_LADSPA_OSCILLATOR_BASE + 0,
-            LSP_LADSPA_URI("oscillator_mono"),
-            LSP_CLAP_URI("oscillator_mono"),
+            {
+                LSP_LV2_URI("oscillator_mono"),
+                LSP_LV2UI_URI("oscillator_mono"),
+                "sntq",
+                LSP_VST3_UID("o1m     sntq"),
+                LSP_VST3UI_UID("o1m     sntq"),
+                LSP_LADSPA_OSCILLATOR_BASE + 0,
+                LSP_LADSPA_URI("oscillator_mono"),
+                LSP_CLAP_URI("oscillator_mono"),
+                LSP_GST_UID("oscillator_mono"),
+            },
             LSP_PLUGINS_OSCILLATOR_VERSION,
             plugin_classes,
             clap_features,
