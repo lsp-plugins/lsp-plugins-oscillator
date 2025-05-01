@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2024 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2024 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright (C) 2025 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2025 Vladimir Sadovnikov <sadko4u@gmail.com>
  *
  * This file is part of lsp-plugins-oscillator
  * Created on: 3 авг. 2021 г.
@@ -90,7 +90,7 @@ namespace lsp
         {
             PORTS_MONO_PLUGIN,
             BYPASS,
-            LOG_CONTROL("freq", "Frequency", U_HZ, oscillator_metadata::FREQUENCY),
+            LOG_CONTROL("freq", "Frequency", "Frequency", U_HZ, oscillator_metadata::FREQUENCY),
             AMP_GAIN10("gain", "Output gain", 1.0f),
             CONTROL("dcoff", "DC Offset", U_NONE, oscillator_metadata::DCOFFSET),
             COMBO("scr", "DC Reference", oscillator_metadata::SC_DC_DFL, sc_dc_ref),
