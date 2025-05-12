@@ -92,7 +92,7 @@ namespace lsp
             BYPASS,
             LOG_CONTROL("freq", "Frequency", "Frequency", U_HZ, oscillator_metadata::FREQUENCY),
             AMP_GAIN10("gain", "Output gain", 1.0f),
-            CONTROL("dcoff", "DC Offset", U_NONE, oscillator_metadata::DCOFFSET),
+            CONTROL("dcoff", "DC Offset", "DC offset", U_NONE, oscillator_metadata::DCOFFSET),
             COMBO("scr", "DC Reference", "DC reference", oscillator_metadata::SC_DC_DFL, sc_dc_ref),
             CYC_CONTROL("iniph", "Initial Phase", U_DEG, oscillator_metadata::INITPHASE),
             COMBO("scm", "Operation Mode", "Mode", oscillator_metadata::SC_MODE_DFL, sc_mode),
