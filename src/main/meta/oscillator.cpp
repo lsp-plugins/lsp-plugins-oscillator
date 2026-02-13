@@ -146,7 +146,7 @@ namespace lsp
             clap_features,
             E_INLINE_DISPLAY | E_DUMP_STATE,
             oscillator_ports,
-            "util/oscillator_mono.xml",
+            "plugins/util/oscillator_mono.xml",
             NULL,
             mono_plugin_port_groups,
             &oscillator_bundle
