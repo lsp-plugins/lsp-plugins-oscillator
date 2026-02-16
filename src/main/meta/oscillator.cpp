@@ -149,7 +149,8 @@ namespace lsp
             "plugins/util/oscillator_mono.xml",
             NULL,
             mono_plugin_port_groups,
-            &oscillator_bundle
+            &oscillator_bundle,
+            1
         };
         LSP_REGISTER_METADATA(oscillator_mono);
 
