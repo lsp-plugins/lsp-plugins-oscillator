@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2025 Linux Studio Plugins Project <https://lsp-plug.in/>
- *           (C) 2025 Vladimir Sadovnikov <sadko4u@gmail.com>
+ * Copyright (C) 2026 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2026 Vladimir Sadovnikov <sadko4u@gmail.com>
  *
  * This file is part of lsp-plugins-oscillator
  * Created on: 3 авг. 2021 г.
@@ -20,12 +20,13 @@
  */
 
 #include <lsp-plug.in/plug-fw/meta/ports.h>
+#include <lsp-plug.in/plug-fw/meta/registry.h>
 #include <lsp-plug.in/shared/meta/developers.h>
 #include <private/meta/oscillator.h>
 
 #define LSP_PLUGINS_OSCILLATOR_VERSION_MAJOR       1
 #define LSP_PLUGINS_OSCILLATOR_VERSION_MINOR       0
-#define LSP_PLUGINS_OSCILLATOR_VERSION_MICRO       29
+#define LSP_PLUGINS_OSCILLATOR_VERSION_MICRO       30
 
 #define LSP_PLUGINS_OSCILLATOR_VERSION  \
     LSP_MODULE_VERSION( \
@@ -145,10 +146,13 @@ namespace lsp
             clap_features,
             E_INLINE_DISPLAY | E_DUMP_STATE,
             oscillator_ports,
-            "util/oscillator_mono.xml",
+            "plugins/util/oscillator_mono.xml",
             NULL,
             mono_plugin_port_groups,
-            &oscillator_bundle
+            &oscillator_bundle,
+            1
         };
+        LSP_REGISTER_METADATA(oscillator_mono);
+
     } /* namespace meta */
 } /* namespace lsp */

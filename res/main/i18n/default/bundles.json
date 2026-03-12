@@ -1,7 +1,10 @@
 {
 	"oscillator": {
-		"name": "Oscillator",
-		"description": "This plugin implements a simple yet flexible utility signal generator.\nIt can be used to provide reference waves in replacement, additive and\nmultiplicative (modulation) mode."
+		"description": "This plugin implements a simple yet flexible utility signal generator.\nIt can be used to provide reference waves in replacement, additive and\nmultiplicative (modulation) mode.",
+		"name": "Oscillator"
+	},
+	"launcher": {
+		"oscillator_mono": "Mono"
 	}
 }
 
